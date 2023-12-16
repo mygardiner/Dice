@@ -63,34 +63,34 @@ class Die {
       ellipse(myX + 75, myY + 75, 8, 8);
     } else if (result == 2) {
       fill(0);
-      ellipse(myX + 62, myY + 62, 8, 8);
-      ellipse(myX + 88, myY + 88, 8, 8);
+      ellipse(myX + 64, myY + 64, 9, 9);
+      ellipse(myX + 88, myY + 88, 9, 9);
     } else if (result == 3) {
       fill(0);
-      ellipse(myX + 88, myY + 62, 8, 8);
-      ellipse(myX + 75, myY + 75, 8, 8);
-      ellipse(myX + 62, myY + 88, 8, 8);
+      ellipse(myX + 88, myY + 64, 9, 9);
+      ellipse(myX + 75, myY + 75, 9, 9);
+      ellipse(myX + 64, myY + 88, 9, 9);
     } else if (result == 4) {
       fill(0);
-      ellipse(myX + 62, myY + 62, 8, 8);
-      ellipse(myX + 62, myY + 88, 8, 8);
-      ellipse(myX + 88, myY + 62, 8, 8);
-      ellipse(myX + 88, myY + 88, 8, 8);
+      ellipse(myX + 64, myY + 64, 9, 9);
+      ellipse(myX + 64, myY + 88, 9, 8);
+      ellipse(myX + 88, myY + 64, 9, 9);
+      ellipse(myX + 88, myY + 88, 9, 9);
     } else if (result == 5) {
       fill(0);
-      ellipse(myX + 88, myY + 62, 8, 8);
-      ellipse(myX + 75, myY + 75, 8, 8);
-      ellipse(myX + 62, myY + 88, 8, 8);
-      ellipse(myX + 62, myY + 62, 8, 8);
-      ellipse(myX + 88, myY + 88, 8, 8);
+      ellipse(myX + 88, myY + 64, 9, 9);
+      ellipse(myX + 75, myY + 75, 9, 9);
+      ellipse(myX + 64, myY + 88, 9, 9);
+      ellipse(myX + 64, myY + 64, 9, 9);
+      ellipse(myX + 88, myY + 88, 9, 9);
     } else if (result == 6) {
       fill(0);
-      ellipse(myX + 62, myY + 62, 8, 8);
-      ellipse(myX + 75, myY + 62, 8, 8);
-      ellipse(myX + 88, myY + 62, 8, 8);
-      ellipse(myX + 62, myY + 88, 8, 8);
-      ellipse(myX + 75, myY + 88, 8, 8);
-      ellipse(myX + 88, myY + 88, 8, 8);
+      ellipse(myX + 64, myY + 64, 9, 9);
+      ellipse(myX + 75, myY + 64, 9, 9);
+      ellipse(myX + 88, myY + 64, 9, 9);
+      ellipse(myX + 64, myY + 88, 9, 9);
+      ellipse(myX + 75, myY + 88, 9, 9);
+      ellipse(myX + 88, myY + 88, 9, 9);
     }
   }
 }
