@@ -1,68 +1,96 @@
-void setup(){
- size(400,400);
- textAlign(CENTER);
- noLoop();
+Die bob;
+Die mob;
+
+void setup() {
+  background((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+  size(500, 500);  
+  noLoop();
 }
 
-void draw(){
-  for(int y = 0; y < 500; y+=50){
-    for(int x = 0; x < 500; x+=50){
-    Dice bob = new Dice(x,y);
+int total = 0;
+
+void draw() {
+  int i = -46;
+  int p = -47;
+  int j = 449;
+  int k = -102;
+  
+  while (p < 490) {
+    bob = new Die(i, p);
+    bob.roll();
     bob.show();
+    total += bob.result; 
+    mob = new Die(j, k);
+    mob.roll();
+    mob.show();
+    total += mob.result; 
+    i = i + 55;
+    p = p + 55;
+    j = j - 55;
+    k = k + 55;
+  }
+
+  fill(255);
+  rect(width/2 - 50, height - 50, 100, 20);
+  fill(0);
+  text("Total: " + total, width/2 - 20, height - 35);
+}
+
+void mousePressed() {
+  redraw();
+}
+
+class Die {
+  int myX, myY, result;
+
+  Die(int x, int y) {
+    myX = x;
+    myY = y;
+    result = 1;
+  }
+
+  void roll() {
+    int a = (int)(Math.random()*6);
+    result = a + 1;
+  }
+
+  void show() {
+    fill(255);
+    rect(myX + 50, myY + 50, 50, 50);
+
+    if (result == 1) {
+      fill(0);
+      ellipse(myX + 75, myY + 75, 8, 8);
+    } else if (result == 2) {
+      fill(0);
+      ellipse(myX + 62, myY + 62, 8, 8);
+      ellipse(myX + 88, myY + 88, 8, 8);
+    } else if (result == 3) {
+      fill(0);
+      ellipse(myX + 88, myY + 62, 8, 8);
+      ellipse(myX + 75, myY + 75, 8, 8);
+      ellipse(myX + 62, myY + 88, 8, 8);
+    } else if (result == 4) {
+      fill(0);
+      ellipse(myX + 62, myY + 62, 8, 8);
+      ellipse(myX + 62, myY + 88, 8, 8);
+      ellipse(myX + 88, myY + 62, 8, 8);
+      ellipse(myX + 88, myY + 88, 8, 8);
+    } else if (result == 5) {
+      fill(0);
+      ellipse(myX + 88, myY + 62, 8, 8);
+      ellipse(myX + 75, myY + 75, 8, 8);
+      ellipse(myX + 62, myY + 88, 8, 8);
+      ellipse(myX + 62, myY + 62, 8, 8);
+      ellipse(myX + 88, myY + 88, 8, 8);
+    } else if (result == 6) {
+      fill(0);
+      ellipse(myX + 62, myY + 62, 8, 8);
+      ellipse(myX + 75, myY + 62, 8, 8);
+      ellipse(myX + 88, myY + 62, 8, 8);
+      ellipse(myX + 62, myY + 88, 8, 8);
+      ellipse(myX + 75, myY + 88, 8, 8);
+      ellipse(myX + 88, myY + 88, 8, 8);
     }
   }
-  text ("the total is "+ (int)(Math.random()*250), 250, 250);
-}
-
-class Dice {
-  int myX, myY;
-  Dice(int x, int y){
-   myX = x;
-   myY = y;
-  }
- 
-void show(){
-fill(#FFFFFF);
-rect(myX, myY, 50,50);
-fill(#E51E1E);
-int number = ((int)(Math.random()*6)+1);
-if (number == 1){
-  fill(#2C2222);
-  ellipse(myX+25,myY+25,5,5);
-} else if (number == 2){
-  fill(#2C2222);
-  ellipse(myX+15,myY+25,5,5);
-  ellipse(myX+35,myY+25,5,5);
-  } else if (number == 3){
-  fill(#2C2222);
-  ellipse(myX+15,myY+35,5,5);
-  ellipse(myX+35,myY+35,5,5);
-  ellipse(myX+25,myY+20,5,5);
-  } else if (number == 4){
-  fill(#2C2222);
-  ellipse(myX+18,myY+35,5,5);
-  ellipse(myX+32,myY+35,5,5);
-  ellipse(myX+18,myY+20,5,5);
-  ellipse(myX+32,myY+20,5,5);
-  } else if (number == 5){
-  fill(#2C2222);
-  ellipse(myX+25,myY+25,5,5);
-  ellipse(myX+18,myY+32,5,5);
-  ellipse(myX+32,myY+32,5,5);
-  ellipse(myX+18,myY+18,5,5);
-  ellipse(myX+32,myY+18,5,5);
-  } else if (number == 6){
-  fill(#2C2222);
-  ellipse(myX+18,myY+35,5,5);
-  ellipse(myX+18,myY+25,5,5);
-  ellipse(myX+32,myY+25,5,5);
-  ellipse(myX+18,myY+15,5,5);
-  ellipse(myX+32,myY+15,5,5); 
-  ellipse(myX+32,myY+35,5,5);  
-}
-}
-
-}
-void mousePressed(){
- redraw(); 
 }
